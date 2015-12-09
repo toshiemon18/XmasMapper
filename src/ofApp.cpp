@@ -2,11 +2,11 @@
 
 //--------------------------------------------------------------
 void ofApp::setup(){
-	
 	ofEnableSmoothing();
-	
 	ofBackground(0);
-
+	
+	// Syphon setup
+	configureSyphon();
 }
 
 //--------------------------------------------------------------
@@ -17,6 +17,9 @@ void ofApp::update(){
 //--------------------------------------------------------------
 void ofApp::draw(){
 	drawBaseTree();
+	
+	// using Syphon
+	sendToSyphonServer();
 }
 
 void ofApp::drawBaseTree() {
@@ -39,4 +42,16 @@ void ofApp::drawBaseTree() {
 		ofVertex((2 / 3.0) * ofGetWidth() - 25, (1 / 3.0) * (ofGetHeight() - 100)); //D
 		ofVertex((2 / 3.0) * ofGetWidth(), (1 / 3.0) * (ofGetHeight() - 100)); // B
 	ofEndShape();
+}
+
+void ofApp::configureSyphon() {
+	mainOutputSyphonServer.setName("Screen Outputh");
+	mClient.setup();
+	mClient.setApplicationName("Simple Serverh");
+	mClient.setServerName("");
+}
+
+void ofApp::sendToSyphonServer() {
+	mClient.draw(50, 50);
+	mainOutputSyphonServer.publishScreen();
 }
