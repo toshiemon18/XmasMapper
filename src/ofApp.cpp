@@ -5,25 +5,27 @@ void ofApp::setup(){
 	ofEnableSmoothing();
 	ofBackground(0);
 	
+	treeGreen.set(0, 109, 0);
+	
 	// Syphon setup
 	configureSyphon();
 }
 
 //--------------------------------------------------------------
 void ofApp::update(){
-
+	
 }
 
 //--------------------------------------------------------------
 void ofApp::draw(){
 	drawBaseTree();
 	
-	// using Syphon
+	// using Syphon server
 	sendToSyphonServer();
 }
 
 void ofApp::drawBaseTree() {
-	ofSetColor(0, 255, 0);
+	ofSetColor(treeGreen);
 	ofBeginShape();
 		ofVertex(ofGetWidth() / 2.0, 0);
 	

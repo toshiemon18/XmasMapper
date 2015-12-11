@@ -10,6 +10,9 @@ class ofApp : public ofBaseApp{
 		void update();
 		void draw();
 	
+		ofColor treeGreen;
+	
+		// using ofxSyphon
 		ofxSyphonServer mainOutputSyphonServer;
 		ofxSyphonServer individualTextureSyphonServer;
 		ofxSyphonClient mClient;
