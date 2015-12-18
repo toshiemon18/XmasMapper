@@ -9,17 +9,20 @@ void ofApp::setup(){
 	
 	// Syphon setup
 	configureSyphon();
+	mio.setup();
 }
 
 //--------------------------------------------------------------
 void ofApp::update(){
 	
+	mio.update();
+	
 }
 
 //--------------------------------------------------------------
 void ofApp::draw(){
-	drawBaseTree();
-	
+//	drawBaseTree();
+	mio.draw();
 	// using Syphon server
 	sendToSyphonServer();
 }

@@ -2,6 +2,7 @@
 
 #include "ofMain.h"
 #include "ofxSyphon.h"
+#include "Mio01.h"
 
 class ofApp : public ofBaseApp{
 
@@ -16,6 +17,8 @@ class ofApp : public ofBaseApp{
 		ofxSyphonServer mainOutputSyphonServer;
 		ofxSyphonServer individualTextureSyphonServer;
 		ofxSyphonClient mClient;
+	
+		Mio01 mio;
 
 	
 	private:
