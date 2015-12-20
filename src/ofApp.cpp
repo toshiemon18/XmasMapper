@@ -3,7 +3,7 @@
 //--------------------------------------------------------------
 void ofApp::setup(){
 	ofEnableSmoothing();
-	ofBackground(0, 109, 0);
+//	ofBackground(0, 109, 0);
 	
 	treeGreen.set(0, 109, 0);
 	
@@ -16,19 +16,29 @@ void ofApp::setup(){
 //--------------------------------------------------------------
 void ofApp::update(){
 	if (sceneFlag) {
+		ofEnableSmoothing();
+		ofSetCircleResolution(64);
 		ofBackground(0);
+
 		mio.update();
 	}
 	else {
 		if (potsuSetuped == false) {
+			ofSetCircleResolution(64);
 			ofBackground(0, 109, 0);
+			ofEnableAlphaBlending();
+
 			potsu.setup();
 			potsuSetuped = true;
 		}
+		ofSetCircleResolution(64);
+		ofBackground(0, 109, 0);
+		ofEnableAlphaBlending();
+
 		potsu.update();
 	}
 	
-	if (time > 120) {
+	if (time > 300) {
 		changedFlag = true;
 		sceneFlag = !sceneFlag;
 		time = 0;

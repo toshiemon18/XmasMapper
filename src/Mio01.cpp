@@ -2,10 +2,6 @@
 
 //--------------------------------------------------------------
 void Mio01::setup(){
-	// General settring
-	ofEnableSmoothing();
-	ofSetCircleResolution(64);
-	ofBackground(0);
 	
 	// Set sphere colors
 	spheresColor[0].setHex(0x05E3E3); // 青

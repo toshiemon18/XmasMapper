@@ -3,10 +3,6 @@
 
 //--------------------------------------------------------------
 void Potsu::setup(){
-	ofSetVerticalSync(true);
-	ofSetCircleResolution(64);
-	ofBackground(0, 109, 0);
-	ofEnableAlphaBlending();
 	
 	world.init();
 	world.setGravity(0, 1);
