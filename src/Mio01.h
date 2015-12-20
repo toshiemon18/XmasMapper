@@ -22,11 +22,19 @@ namespace Xmapper {
 				ofSetColor(sphereColor);
 				ofCircle(spherePosition.x, spherePosition.y, radius);
 			};
-			void fall(float y_disc=0.5) {
-				spherePosition.y -= y_disc;
+			void fall(float y_disc=10) {
+				spherePosition.y += y_disc;
 			};
 			void reset() {
 				spherePosition.set(0, 0);
+			};
+			bool isOverHeight(float threshold) {
+				if (spherePosition.y >= threshold + 50) {
+					return true;
+				}
+				else {
+					return false;
+				}
 			};
 	};
 }
@@ -41,6 +49,7 @@ class Mio01 : public ofBaseApp{
 	private:
 		void configureSpheres();
 		bool isSphereUpdate();
+		bool isFallen();
 		void drawBaseTree();
 	
 		const int SPHERE_NUM = 6;

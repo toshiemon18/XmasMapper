@@ -3,6 +3,7 @@
 #include "ofMain.h"
 #include "ofxSyphon.h"
 #include "Mio01.h"
+#include "Potsu.h"
 
 class ofApp : public ofBaseApp{
 
@@ -19,10 +20,13 @@ class ofApp : public ofBaseApp{
 		ofxSyphonClient mClient;
 	
 		Mio01 mio;
-
+		Potsu potsu;
+		bool sceneFlag = true;
+		bool changedFlag = false;
+		bool potsuSetuped = false;
+		int time = 0;
 	
 	private:
-		void drawBaseTree();
 		void configureSyphon();
 		void sendToSyphonServer();
 	
