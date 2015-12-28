@@ -6,8 +6,8 @@ void Potsu::setup(){
 	
 	world.init();
 	world.setGravity(0, 1);
-	world.createBounds(0, -100, ofGetWidth(), ofGetHeight() - 100);
-	world.setFPS(30);
+	world.createBounds(0, -100, ofGetWidth(), ofGetHeight());
+//	world.setFPS(30);
 	world.registerGrabbing();
 	
 	snow.load("snow.png");

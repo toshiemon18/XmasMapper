@@ -3,8 +3,6 @@
 //--------------------------------------------------------------
 void ofApp::setup(){
 	ofEnableSmoothing();
-//	ofBackground(0, 109, 0);
-	
 	treeGreen.set(0, 109, 0);
 	
 	// Syphon setup
@@ -19,6 +17,7 @@ void ofApp::update(){
 		ofEnableSmoothing();
 		ofSetCircleResolution(64);
 		ofBackground(0);
+		ofSetFrameRate(60);
 
 		mio.update();
 	}
@@ -27,7 +26,7 @@ void ofApp::update(){
 			ofSetCircleResolution(64);
 			ofBackground(0, 109, 0);
 			ofEnableAlphaBlending();
-
+			ofSetFrameRate(30);
 			potsu.setup();
 			potsuSetuped = true;
 		}
@@ -38,7 +37,7 @@ void ofApp::update(){
 		potsu.update();
 	}
 	
-	if (time > 300) {
+	if (time > 5400) {
 		changedFlag = true;
 		sceneFlag = !sceneFlag;
 		time = 0;
